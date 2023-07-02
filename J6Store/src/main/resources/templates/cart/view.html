@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{/layout/index :: dynamic(~{::main})}"
+>
+  <body>
+    <main>
+      <div
+        class="panel panel-success"
+        th:fragment="shopping-cart"
+        style="margin-top: 20px"
+      >
+        <div class="panel-heading">Giỏ hàng</div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Giá Tiền</th>
+                <th>Số Lượng</th>
+                <th>Số Tiền</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in cart.items">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>${{item.price|number:2}}</td>
+                <td>
+                  <input
+                    ng-model="item.qty"
+                    type="number"
+                    min="1"
+                    style="width: 100px"
+                    ng-change="cart.saveToLocalStorage()"
+                  />
+                </td>
+                <td>${{item.qty * item.price | number:2}}</td>
+                <td>
+                  <button
+                    ng-click="cart.remove(item.id)"
+                    class="btn btn-sm btn-success"
+                  >
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-footer">
+          <button ng-click="cart.clear()" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i>Clear
+          </button>
+          <a th:href="@{/order/checkout}" class="btn btn-primary"
+            ><i class="glyphicon glyphicon-hand-right"></i>Checkout</a
+          >
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<div class="card my-4">
+  <div class="card-body">
+    <table class="table table-condensed">
+      <thead class="bg-success" style="font-variant: small-caps">
+        <tr>
+          <th>#</th>
+          <th>Order ID</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="dt in orderDetails | limitTo: pageSize: start">
+        <td>{{dt.id}}</td>
+        <td>{{dt.order.id}}</td>
+        <td>{{dt.product.name}}</td>
+        <td>{{dt.price | number:0}}</td>
+        <td>{{dt.quantity}}</td>
+        <td class="float-end">
+          <div class="btn-group btn-group-xs">
+            <button
+              ng-click="delete(item)"
+              class="btn btn-danger glyphicon-trash"
+            >
+              <i class="fa-solid fa-trash-can text-dark"></i>
+            </button>
+          </div>
+        </td>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer text-center">
+    <button ng-click="first();" class="btn btn-warning">
+      <i class="fa-solid fa-backward-step"></i>
+      Trang đầu
+    </button>
+    <button ng-click="prev();" class="btn btn-info">
+      <i class="fa-solid fa-backward"></i>
+      Trang trước
+    </button>
+    <button class="btn btn-success">{{pageIndex + 1}} of {{count()}}</button>
+    <button ng-click="next();" class="btn btn-info">
+      <i class="fa-solid fa-forward"></i>
+      Trang kế
+    </button>
+    <button ng-click="last();" class="btn btn-warning">
+      <i class="fa-solid fa-forward-step"></i>
+      Trang cuối
+    </button>
+  </div>
+</div>

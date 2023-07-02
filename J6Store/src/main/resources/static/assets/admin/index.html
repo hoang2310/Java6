@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java 6 Store Admintrator</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- route -->
+    <script src="https://code.angularjs.org/1.8.0/angular-route.min.js"></script>
+  </head>
+  <body class="container" ng-app="admin-app">
+    <header class="row">
+      <h2 class="alert alert-success">Website Administration</h2>
+    </header>
+    <div class="row">
+      <nav class="navbar navbar-inverse" style="font-variant: small-caps">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="#!product">Products</a></li>
+            <li><a href="#!account">Accounts</a></li>
+            <li><a href="#!category">Categories</a></li>
+            <li><a href="#!order">Orders</a></li>
+            <li><a href="#!authorize">Authorizing</a></li>
+            <li><a href="#!summary">Thống Kê</a></li>
+            <li><a href="/security/logoff">Sign Out</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main class="ng-view"></main>
+    <footer>
+      <div class="panel panel-default">
+        <div class="panel-body text-center">
+          <h3>Hồ Thái Hoàng - PH13294. 2023</h3>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="/assets/admin/admin-app.js"></script>
+    <script src="/assets/admin/product/product-ctrl.js"></script>
+    <script src="/assets/admin/account/account-ctrl.js"></script>
+    <script src="/assets/admin/authority/authority-ctrl.js"></script>
+    <script src="/assets/admin/category/category-ctrl.js"></script>
+    <script src="/assets/admin/summary/summary-ctrl.js"></script>
+    <script src="/assets/admin/order/order-ctrl.js"></script>
+    <script src="/assets/admin/orderdetail/orderdetail-ctrl.js"></script>
+  </body>
+</html>
