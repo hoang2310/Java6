@@ -1,0 +1,65 @@
+<div class="card my-4">
+  <div class="card-body">
+    <table class="table table-bordered table-condensed">
+      <thead class="bg-success" style="font-variant: small-caps">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <!-- <th>Image</th> -->
+          <th></th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="item in items | limitTo: pageSize: start">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <!-- <td>
+          <img ng-src="/assets/images/{{item.image}}" style="width: 100px" />
+        </td> -->
+        <td>
+          <div class="btn-group btn-group-xs">
+            <button
+              ng-click="edit(item)"
+              class="btn btn-warning glyphicon glyphicon-edit"
+            ></button>
+            <button
+              ng-click="delete(item)"
+              class="btn btn-danger glyphicon glyphicon-trash"
+            ></button>
+          </div>
+        </td>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer text-center">
+    <!-- <button ng-click="first();" class="btn btn-warning">
+      <i class="fa-solid fa-backward-step"></i>
+      Trang đầu
+    </button>
+    <button ng-click="prev();" class="btn btn-info">
+      <i class="fa-solid fa-backward"></i>
+      Trang trước
+    </button>
+    <button class="btn btn-success">{{pageIndex + 1}} of {{count()}}</button>
+    <button ng-click="next();" class="btn btn-info">
+      <i class="fa-solid fa-forward"></i>
+      Trang kế
+    </button>
+    <button ng-click="last();" class="btn btn-warning">
+      <i class="fa-solid fa-forward-step"></i>
+      Trang cuối
+    </button> -->
+    <!-- <button ng-click="pager.first()" class="btn btn-danger">
+            <<
+        </button>
+        <button ng-click="pager.prev()" class="btn btn-danger">
+            <
+        </button>
+        <button class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
+        <button ng-click="pager.next()" class="btn btn-danger">
+            >
+        </button>
+        <button ng-click="pager.last()" class="btn btn-danger">
+            >>
+        </button> -->
+  </div>
+</div>

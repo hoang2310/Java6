@@ -1,0 +1,21 @@
+.poly-item img{
+	height:150px;
+	max-width:95%;
+}
+.poly-item .panel-title{
+	font-size: smaller;
+}
+.poly-item-detail img{
+	max-width:80%;
+}
+.navbar-default{
+	height:70px;
+}
+.navbar-brand{
+	padding-top: 3px;
+	color: white;
+}
+.navbar-nav{
+	padding-top: 10px;
+	color: white;
+}
